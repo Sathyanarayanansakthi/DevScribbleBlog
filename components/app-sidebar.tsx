@@ -1,12 +1,24 @@
 "use client"
 
 import * as React from "react"
-import {BookOpen,Bot,SquareTerminal,} from "lucide-react"
+import {
+  BookOpen,
+  Bot,
+  SquareTerminal,
+  Package,
+} from "lucide-react"
+
 import { NavMain } from "@/components/nav-main"
 import { NavUser } from "@/components/nav-user"
-import { Sidebar,SidebarContent,SidebarFooter,SidebarHeader, SidebarRail,} from "@/components/ui/sidebar"
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarFooter,
+  SidebarHeader,
+  SidebarRail,
+} from "@/components/ui/sidebar"
 
-// Sample app data
+// Sidebar data config
 const data = {
   user: {
     name: "shadcn",
@@ -14,59 +26,49 @@ const data = {
     avatar: "/avatars/shadcn.jpg",
   },
   navMain: [
-    //Blogs
+    // Blogs
     {
       title: "Blog",
       url: "/dashboard/blog",
       icon: SquareTerminal,
       isActive: true,
       items: [
-                {
-          title: "Blogs",
-          url:"/dashboard/blog"
-        },
-        {
-          title: "Create a Blog",
-          url: "/dashboard/blog/createblog"
-        },
-        {
-          title: "Blog List",
-          url: "/dashboard/blog/listblog",
-        },
+        { title: "Blogs", url: "/dashboard/blog" },
+        { title: "Create a Blog", url: "/dashboard/blog/createblog" },
+        { title: "Blog List", url: "/dashboard/blog/listblog" },
       ],
     },
 
-    //Articles
+    // Articles
     {
       title: "Article",
-      url: "#",
+      url: "/dashboard/article",
       icon: Bot,
       items: [
-        {
-          title: "Create an Article",
-          url: "#",
-        },
-        {
-          title: "Article List",
-          url: "#",
-        },
+        { title: "Create an Article", url: "/dashboard/article/create" },
+        { title: "Article List", url: "/dashboard/article/list" },
       ],
     },
 
-    //Roadmaps
+    // Roadmaps
     {
       title: "Road Maps",
-      url: "#",
+      url: "/dashboard/roadmaps",
       icon: BookOpen,
       items: [
-        {
-          title: "Create a Roadmaps",
-          url: "#",
-        },
-        {
-          title: "List the Roadmaps",
-          url: "#",
-        },
+        { title: "Create a Roadmap", url: "/dashboard/roadmaps/create" },
+        { title: "List the Roadmaps", url: "/dashboard/roadmaps/list" },
+      ],
+    },
+
+    // Products
+    {
+      title: "Products",
+      url: "/dashboard/products",
+      icon: Package,
+      items: [
+        { title: "Create a Product", url: "/dashboard/products/create" },
+        { title: "Product List", url: "/dashboard/products/list" },
       ],
     },
   ],
@@ -76,15 +78,17 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
-        {/* Removed TeamSwitcher */}
         <div className="text-lg font-semibold px-4 py-2">Dev Scribble</div>
       </SidebarHeader>
+
       <SidebarContent>
         <NavMain items={data.navMain} />
       </SidebarContent>
+
       <SidebarFooter>
         <NavUser user={data.user} />
       </SidebarFooter>
+
       <SidebarRail />
     </Sidebar>
   )
