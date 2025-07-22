@@ -1,4 +1,7 @@
+"use client"
+
 import { SignupForm } from "@/app/signup/signup-form"
+import Image from "next/image"
 
 export default function SignupPage() {
   return (
@@ -22,10 +25,12 @@ export default function SignupPage() {
 
       {/* Right Section: Image */}
       <div className="relative hidden lg:block bg-muted">
-        <img
+        <Image
           src="https://images.pexels.com/photos/603800/pexels-photo-603800.jpeg"
           alt="Signup Illustration"
-          className="absolute inset-0 h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
+          fill
+          className="object-cover dark:brightness-[0.2] dark:grayscale"
+          priority
         />
       </div>
     </div>

@@ -1,4 +1,7 @@
+"use client"
+
 import { LoginForm } from "@/app/login/login-form"
+import Image from "next/image"
 
 export default function LoginPage() {
   return (
@@ -7,7 +10,7 @@ export default function LoginPage() {
       <div className="flex flex-col gap-4 p-6 md:p-10">
         {/* Branding */}
         <div className="flex justify-center gap-2 md:justify-start">
-          <span className="font-medium text-lg ">
+          <span className="font-medium text-lg">
             Dev Scribble
           </span>
         </div>
@@ -22,10 +25,12 @@ export default function LoginPage() {
 
       {/* Right Image Section */}
       <div className="relative hidden lg:block bg-muted">
-        <img
+        <Image
           src="https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg"
           alt="Code background"
-          className="absolute inset-0 h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
+          fill
+          className="object-cover dark:brightness-[0.2] dark:grayscale"
+          priority
         />
       </div>
     </div>
