@@ -46,7 +46,7 @@ const data = {
       icon: Bot,
       items: [
         { title: "Create an Article", url: "/dashboard/articles/createarticle" },
-        { title: "Article List", url: "/dashboard/article/list" },
+        { title: "Article List", url: "/dashboard/articles/listarticle" },
       ],
     },
 
@@ -67,8 +67,8 @@ const data = {
       url: "/dashboard/products",
       icon: Package,
       items: [
-        { title: "Create a Product", url: "/dashboard/products/create" },
-        { title: "Product List", url: "/dashboard/products/list" },
+        { title: "Create a Product", url: "/dashboard/products/createproducts" },
+        { title: "Product List", url: "/dashboard/products/listproducts" },
       ],
     },
   ],

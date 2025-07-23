@@ -1,7 +1,5 @@
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
-// import { Input } from "@/components/ui/input"
-// import { Label } from "@/components/ui/label"
 import Link from "next/link"
 import { FcGoogle } from "react-icons/fc"
 import { FaApple } from "react-icons/fa"
@@ -12,55 +10,27 @@ export function LoginForm({
 }: React.ComponentProps<"form">) {
   return (
     <form className={cn("flex flex-col gap-6", className)} {...props}>
+      {/* Title */}
       <div className="flex flex-col items-center gap-2 text-center">
         <h1 className="text-2xl font-bold">Login to your account</h1>
-        {/* <p className="text-muted-foreground text-sm text-balance">
-          Enter your email below to login to your account
-        </p>
       </div>
 
+      {/* Buttons */}
       <div className="grid gap-6">
-        <div className="grid gap-3">
-          <Label htmlFor="email">Email</Label>
-          <Input id="email" type="email" placeholder="m@example.com" required />
-        </div>
-
-        <div className="grid gap-3">
-          <div className="flex items-center">
-            <Label htmlFor="password">Password</Label>
-            <a
-              href="/forgetpassword"
-              className="ml-auto text-sm underline-offset-4 hover:underline"
-            >
-              Forgot your password?
-            </a>
-          </div>
-          <Input id="password" type="password" required />
-        </div>
-
-        <Button type="submit" className="w-full">
-          Login
-        </Button>
-
-        <div className="after:border-border relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t">
-          <span className="bg-background text-muted-foreground relative z-10 px-2">
-            Or continue with
-          </span>
-        </div> */}
-
-        {/* Google Login Button */}
+        {/* Google Login */}
         <Button variant="outline" className="w-full gap-2 p-5">
           <FcGoogle className="h-5 w-5" />
           Login with Google
         </Button>
 
-        {/* Apple Login Button */}
-        <Button variant="outline" className="w-full gap-2 p-5">
+        {/* Apple Login Placeholder */}
+        <div className="w-full flex items-center justify-center gap-2 text-muted-foreground border border-dashed rounded-md py-4 text-sm">
           <FaApple className="h-5 w-5" />
-          Login with Apple
-        </Button>
+          Apple login coming soon
+        </div>
       </div>
 
+      {/* Footer */}
       <div className="text-center text-sm">
         Don&apos;t have an account?{" "}
         <Link href="/signup" className="underline underline-offset-4">
