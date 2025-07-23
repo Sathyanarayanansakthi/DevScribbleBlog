@@ -45,7 +45,7 @@ const data = {
       url: "/dashboard/article",
       icon: Bot,
       items: [
-        { title: "Create an Article", url: "/dashboard/article/create" },
+        { title: "Create an Article", url: "/dashboard/articles/createarticle" },
         { title: "Article List", url: "/dashboard/article/list" },
       ],
     },
